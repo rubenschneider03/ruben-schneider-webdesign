@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ──────────────────────────────────────────── */
+:root {
+  --background:   #f9f8f6;
+  --foreground:   #0d0d0c;
+  --surface:      #ffffff;
+  --surface2:     #f0efed;
+  --muted:        #6b6b68;
+  --hairline:     #e4e3e0;
+  --accent:       #1e3a5f;
+  --accent-light: #e8eef5;
+}
+
+@theme inline {
+  --font-sans:    var(--font-sans);
+  --font-display: var(--font-display);
+
+  --color-background:   var(--background);
+  --color-foreground:   var(--foreground);
+  --color-surface:      var(--surface);
+  --color-surface2:     var(--surface2);
+  --color-muted:        var(--muted);
+  --color-hairline:     var(--hairline);
+  --color-accent:       var(--accent);
+  --color-accent-light: var(--accent-light);
+}
+
+/* ─── Base ────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Typography helpers ─────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
