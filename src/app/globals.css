@@ -2,14 +2,16 @@
 
 /* ─── Design tokens ──────────────────────────────────────────── */
 :root {
-  --background:   #f9f8f6;
-  --foreground:   #0d0d0c;
-  --surface:      #ffffff;
-  --surface2:     #f0efed;
-  --muted:        #6b6b68;
-  --hairline:     #e4e3e0;
-  --accent:       #1e3a5f;
-  --accent-light: #e8eef5;
+  --background:   #F8F7F4;
+  --foreground:   #111110;
+  --surface:      #FFFFFF;
+  --surface2:     #F0EFEC;
+  --muted:        #64645F;
+  --hairline:     #E3E1DC;
+  --accent:       #C9A84C;
+  --accent-dark:  #A88530;
+  --accent-light: #FBF4E4;
+  --deep-navy:    #1E3A5F;
 }
 
 @theme inline {
@@ -23,7 +25,9 @@
   --color-muted:        var(--muted);
   --color-hairline:     var(--hairline);
   --color-accent:       var(--accent);
+  --color-accent-dark:  var(--accent-dark);
   --color-accent-light: var(--accent-light);
+  --color-deep-navy:    var(--deep-navy);
 }
 
 /* ─── Base ────────────────────────────────────────────────────── */
@@ -44,4 +48,12 @@ body {
 /* ─── Typography helpers ─────────────────────────────────────── */
 .font-display {
   font-family: var(--font-display), Georgia, serif;
+}
+
+/* ─── Blueprint grid utility ─────────────────────────────────── */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(100,100,95,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100,100,95,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
