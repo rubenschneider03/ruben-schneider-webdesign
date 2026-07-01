@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from '@/lib/constants'
+
 const SECTION_LINKS = [
   { label: 'Leistungen', href: '#leistungen' },
   { label: 'Pakete',     href: '#pakete' },
@@ -72,10 +74,10 @@ export default function Footer() {
               Kontakt
             </p>
             <a
-              href="mailto:kontakt@ruben-schneider.ch"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="text-sm text-muted hover:text-white transition-colors"
             >
-              kontakt@ruben-schneider.ch
+              {CONTACT_EMAIL}
             </a>
           </div>
         </div>

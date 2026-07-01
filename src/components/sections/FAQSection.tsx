@@ -17,12 +17,8 @@ const FAQS = [
     a: 'Grundlegende Informationen zu Ihrem Betrieb und Ihren Leistungen sind hilfreich. Ich unterstütze gerne bei der Strukturierung und Aufbereitung. Auf Wunsch übernehme ich auch Texte oder helfe bei der Bildauswahl.',
   },
   {
-    q: 'Kann eine bestehende Website überarbeitet werden?',
-    a: 'Ja – oft ist eine Modernisierung einer bestehenden Website sinnvoller als ein kompletter Neubau. Ich schaue mir Ihre aktuelle Situation gerne an und empfehle den sinnvollsten Weg.',
-  },
-  {
     q: 'Gibt es laufende Kosten nach der Fertigstellung?',
-    a: 'Hosting und Domain-Gebühren fallen separat an – in der Regel CHF 100–200 pro Jahr. Auf Wunsch übernehme ich die Betreuung und Wartung als Add-on, damit Sie sich nicht selbst darum kümmern müssen.',
+    a: 'Hosting und Domain-Gebühren fallen separat an – in der Regel CHF 100–200 pro Jahr. Bei Bedarf können wir auch eine einfache Wartungsvereinbarung treffen.',
   },
   {
     q: 'Funktioniert die Website auch auf dem Smartphone?',

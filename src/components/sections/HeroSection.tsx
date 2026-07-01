@@ -141,7 +141,7 @@ export default function HeroSection() {
                 className="text-xs font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full border"
                 style={{ color: '#C9A84C', borderColor: '#C9A84C', background: '#FBF4E4' }}
               >
-                Webdesign · Handwerk · Bau · Schweiz
+                Webdesign · Handwerk · Bau · Immobilien · Schweiz
               </span>
             </div>
 
@@ -150,12 +150,12 @@ export default function HeroSection() {
               className="font-display leading-[1.08] text-foreground mb-6"
               style={{ fontSize: 'clamp(2.4rem, 5vw, 3.75rem)' }}
             >
-              Websites für Handwerksbetriebe, die Vertrauen schaffen und Anfragen bringen.
+              Websites für Handwerk, Bau und Immobilien, die Vertrauen schaffen und Aufträge bringen.
             </h1>
 
             {/* Subline */}
             <p className="text-lg text-muted leading-relaxed mb-4 max-w-xl">
-              Moderne, schnelle und verständliche Websites für Bau- und Handwerksunternehmen – vom einfachen Onepager bis zur komplexen Plattform mit Login, Profilen und Zahlungssystem.
+              Moderne, schnelle und verständliche Websites für Handwerksbetriebe, Bauunternehmen und Immobilienanbieter – vom einfachen Onepager bis zur komplexen Plattform mit Login, Profilen und Zahlungssystem.
             </p>
 
             {/* Support text */}

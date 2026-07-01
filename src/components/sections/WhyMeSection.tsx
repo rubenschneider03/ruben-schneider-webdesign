@@ -86,9 +86,9 @@ export default function WhyMeSection() {
             </p>
             <p className="text-base text-muted leading-relaxed">
               Durch meinen Hintergrund im Bau- und Ingenieurwesen verstehe ich, wie
-              Bau- und Handwerksbetriebe arbeiten, welche Leistungen erklärt werden
-              müssen und wie wichtig Vertrauen, Referenzen und ein sauberer erster
-              Eindruck sind.
+              Handwerksbetriebe, Bauunternehmen und Immobilienanbieter arbeiten – welche
+              Leistungen erklärt werden müssen und wie wichtig Vertrauen, Referenzen
+              und ein sauberer erster Eindruck für Aufträge sind.
             </p>
           </div>
         </div>

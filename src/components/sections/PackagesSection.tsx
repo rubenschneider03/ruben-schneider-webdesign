@@ -283,7 +283,7 @@ export default function PackagesSection() {
             Pakete & Preise
           </p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-[1.1]">
-            Drei Pakete – passend zu Ihrem Betrieb.
+            Drei Pakete – für Handwerk, Bau und Immobilien.
           </h2>
         </div>
         <p className="text-sm text-muted mb-14 max-w-xl leading-relaxed">

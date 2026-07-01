@@ -55,7 +55,7 @@ export default function ProblemSection() {
             Viele gute Betriebe wirken online schlechter, als sie sind.
           </h2>
           <p className="text-base md:text-lg text-muted leading-relaxed">
-            Ein sauberes Handwerk, zufriedene Kunden und jahrelange Erfahrung – und trotzdem verliert man potenzielle Aufträge, weil der erste Google-Treffer enttäuscht.
+            Ob Schreiner, Elektriker, Gipser, Gartenbauer oder Immobilienverwaltung – viele Betriebe und Dienstleister leisten ausgezeichnete Arbeit, verlieren aber potenzielle Aufträge, weil der erste Google-Treffer enttäuscht.
           </p>
         </div>
 

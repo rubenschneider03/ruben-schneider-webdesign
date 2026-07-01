@@ -16,14 +16,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ruben Schneider – Webdesign für Handwerk & Bau",
+  title: "Ruben Schneider – Webdesign für Handwerk, Bau & Immobilien",
   description:
-    "Moderne Websites für Bau- und Handwerksbetriebe in der Deutschschweiz – vom Onepager bis zur Web-App.",
+    "Moderne Websites für Handwerksbetriebe, Bauunternehmen und Immobilienanbieter in der Deutschschweiz – vom einfachen Onepager bis zur komplexen Web-App.",
   metadataBase: new URL("https://ruben-schneider.ch"),
   openGraph: {
-    title: "Ruben Schneider – Webdesign für Handwerk & Bau",
+    title: "Ruben Schneider – Webdesign für Handwerk, Bau & Immobilien",
     description:
-      "Moderne Websites für Bau- und Handwerksbetriebe in der Deutschschweiz – vom Onepager bis zur Web-App.",
+      "Moderne Websites für Handwerksbetriebe, Bauunternehmen und Immobilienanbieter in der Deutschschweiz – vom einfachen Onepager bis zur komplexen Web-App.",
     url: "https://ruben-schneider.ch",
     siteName: "Ruben Schneider Webdesign",
     locale: "de_CH",

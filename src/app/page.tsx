@@ -5,7 +5,6 @@ import PackagesSection from '@/components/sections/PackagesSection'
 import HomelioReference from '@/components/sections/HomelioReference'
 import WhyMeSection from '@/components/sections/WhyMeSection'
 import ProcessSection from '@/components/sections/ProcessSection'
-import AddOnsSection from '@/components/sections/AddOnsSection'
 import FAQSection from '@/components/sections/FAQSection'
 import ContactSection from '@/components/sections/ContactSection'
 import Footer from '@/components/Footer'
@@ -21,7 +20,6 @@ export default function HomePage() {
         <HomelioReference />
         <WhyMeSection />
         <ProcessSection />
-        <AddOnsSection />
         <FAQSection />
         <ContactSection />
       </main>
