@@ -10,8 +10,8 @@ export function Footer() {
         <div className="flex items-center gap-6 text-sm text-muted">
           <a href="/impressum" className="hover:text-foreground transition-colors">Impressum</a>
           <a href="/datenschutz" className="hover:text-foreground transition-colors">Datenschutz</a>
-          <a href="mailto:hallo@ruben-schneider.ch" className="hover:text-foreground transition-colors">
-            hallo@ruben-schneider.ch
+          <a href="mailto:kontakt@schneider-webdesign.ch" className="hover:text-foreground transition-colors">
+            kontakt@schneider-webdesign.ch
           </a>
         </div>
       </div>
