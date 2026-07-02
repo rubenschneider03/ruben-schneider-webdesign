@@ -18,12 +18,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Ruben Schneider – Webdesign für Handwerk, Bau & Immobilien",
   description:
-    "Moderne Websites für Handwerksbetriebe, Bauunternehmen und Immobilienanbieter in der Deutschschweiz – vom einfachen Onepager bis zur komplexen Web-App.",
+    "Moderne Websites für Handwerksbetriebe, Bauunternehmen und Immobilienanbieter in der Deutschschweiz – vom Onepager bis zur Web-App.",
   metadataBase: new URL("https://schneider-webdesign.ch"),
   openGraph: {
     title: "Ruben Schneider – Webdesign für Handwerk, Bau & Immobilien",
     description:
-      "Moderne Websites für Handwerksbetriebe, Bauunternehmen und Immobilienanbieter in der Deutschschweiz – vom einfachen Onepager bis zur komplexen Web-App.",
+      "Moderne Websites für Handwerksbetriebe, Bauunternehmen und Immobilienanbieter in der Deutschschweiz – vom Onepager bis zur Web-App.",
     url: "https://schneider-webdesign.ch",
     siteName: "Schneider Webdesign",
     locale: "de_CH",
@@ -39,7 +39,7 @@ export default function RootLayout({
       lang="de"
       className={`${instrumentSerif.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col" style={{ background: 'var(--bg)', color: 'var(--fg)' }}>
         {children}
       </body>
     </html>

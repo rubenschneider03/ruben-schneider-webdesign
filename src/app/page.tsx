@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import HeroSection from '@/components/sections/HeroSection'
-import ProblemSection from '@/components/sections/ProblemSection'
+import WhatYouGetSection from '@/components/sections/WhatYouGetSection'
 import PackagesSection from '@/components/sections/PackagesSection'
 import HomelioReference from '@/components/sections/HomelioReference'
 import WhyMeSection from '@/components/sections/WhyMeSection'
@@ -15,7 +15,7 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
-        <ProblemSection />
+        <WhatYouGetSection />
         <PackagesSection />
         <HomelioReference />
         <WhyMeSection />

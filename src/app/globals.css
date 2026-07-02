@@ -1,59 +1,113 @@
 @import "tailwindcss";
 
-/* ─── Design tokens ──────────────────────────────────────────── */
 :root {
-  --background:   #F8F7F4;
-  --foreground:   #111110;
-  --surface:      #FFFFFF;
-  --surface2:     #F0EFEC;
-  --muted:        #64645F;
-  --hairline:     #E3E1DC;
-  --accent:       #C9A84C;
-  --accent-dark:  #A88530;
-  --accent-light: #FBF4E4;
-  --deep-navy:    #1E3A5F;
+  /* Warm ivory/cream backgrounds */
+  --bg:          #F7F5F0;
+  --bg-dark:     #EFECE6;
+  --surface:     #FFFFFF;
+  --surface2:    #F2EFE9;
+
+  /* Charcoal text */
+  --fg:          #1C1A17;
+  --fg-muted:    #5C5952;
+  --fg-subtle:   #8A8578;
+
+  /* Warm gold accent */
+  --gold:        #B8913A;
+  --gold-light:  #F5EDDA;
+  --gold-dark:   #8A6B28;
+
+  /* Stone/clay tones */
+  --stone:       #9C8E7E;
+  --clay:        #D4C9BA;
+  --clay-light:  #E8E2D8;
+
+  /* Borders */
+  --border:      #E2DDD6;
+  --border-light: #EDE9E2;
+
+  /* Dark section */
+  --dark-bg:     #1C1A17;
+  --dark-surface: #252320;
+  --dark-border:  rgba(255,255,255,0.10);
 }
 
 @theme inline {
-  --font-sans:    var(--font-sans);
   --font-display: var(--font-display);
+  --font-sans:    var(--font-sans);
 
-  --color-background:   var(--background);
-  --color-foreground:   var(--foreground);
+  --color-bg:           var(--bg);
+  --color-bg-dark:      var(--bg-dark);
   --color-surface:      var(--surface);
   --color-surface2:     var(--surface2);
-  --color-muted:        var(--muted);
-  --color-hairline:     var(--hairline);
-  --color-accent:       var(--accent);
-  --color-accent-dark:  var(--accent-dark);
-  --color-accent-light: var(--accent-light);
-  --color-deep-navy:    var(--deep-navy);
+  --color-fg:           var(--fg);
+  --color-fg-muted:     var(--fg-muted);
+  --color-fg-subtle:    var(--fg-subtle);
+  --color-gold:         var(--gold);
+  --color-gold-light:   var(--gold-light);
+  --color-gold-dark:    var(--gold-dark);
+  --color-stone:        var(--stone);
+  --color-clay:         var(--clay);
+  --color-clay-light:   var(--clay-light);
+  --color-border:       var(--border);
+  --color-border-light: var(--border-light);
+  --color-dark-bg:      var(--dark-bg);
 }
 
-/* ─── Base ────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
 body {
-  margin: 0;
-  padding: 0;
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0; padding: 0;
+  background: var(--bg);
+  color: var(--fg);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* ─── Typography helpers ─────────────────────────────────────── */
-.font-display {
-  font-family: var(--font-display), Georgia, serif;
-}
-
-/* ─── Blueprint grid utility ─────────────────────────────────── */
+/* Blueprint grid - very subtle, used as background detail */
 .blueprint-grid {
   background-image:
-    linear-gradient(rgba(100,100,95,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100,100,95,0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgba(90,82,70,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90,82,70,0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
+
+/* Scroll reveal animation classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Shimmer for gold elements */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Soft pulse for CTA */
+@keyframes softPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184,145,58,0.20); }
+  50% { box-shadow: 0 0 0 8px rgba(184,145,58,0); }
+}
+
+/* Floating animation for hero cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.float-1 { animation: float 4s ease-in-out infinite; }
+.float-2 { animation: float 4s ease-in-out infinite 1.3s; }
+.float-3 { animation: float 4s ease-in-out infinite 2.6s; }
+
+.font-display { font-family: var(--font-display), Georgia, serif; }

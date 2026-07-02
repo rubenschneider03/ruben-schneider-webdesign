@@ -1,97 +1,64 @@
+'use client'
 import { CONTACT_EMAIL } from '@/lib/constants'
-
-const SECTION_LINKS = [
-  { label: 'Leistungen', href: '#leistungen' },
-  { label: 'Pakete',     href: '#pakete' },
-  { label: 'Referenz',   href: '#referenz' },
-  { label: 'Ablauf',     href: '#ablauf' },
-  { label: 'Kontakt',    href: '#kontakt' },
-]
-
-const SERVICE_LINKS = [
-  { label: 'Onepager',            href: '#pakete' },
-  { label: 'Business-Website',    href: '#pakete' },
-  { label: 'Web-App / Plattform', href: '#pakete' },
-]
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer style={{ backgroundColor: '#111110' }}>
-      <div className="max-w-6xl mx-auto px-6 pt-16 pb-8">
-        {/* Top: brand */}
-        <div className="mb-12">
-          <p className="font-display text-3xl md:text-4xl text-white mb-2">
+    <footer style={{ background: 'var(--dark-bg)' }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8 pt-16 pb-10">
+        {/* Brand */}
+        <div className="mb-8">
+          <p className="font-display mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', color: 'rgba(247,245,240,0.96)' }}>
             Ruben Schneider
           </p>
-          <p className="text-muted text-sm">Webdesign für Handwerk & Bau</p>
+          <p className="text-sm" style={{ color: 'rgba(247,245,240,0.45)' }}>
+            Webdesign für Handwerk, Bau &amp; Immobilien
+          </p>
         </div>
 
-        {/* Middle: 3 columns */}
-        <div className="grid sm:grid-cols-3 gap-8 mb-12">
-          {/* Navigation */}
-          <div>
-            <p className="text-xs font-semibold tracking-[0.16em] uppercase text-accent mb-4">
-              Navigation
-            </p>
-            <ul className="flex flex-col gap-2.5">
-              {SECTION_LINKS.map(l => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="text-sm text-muted hover:text-white transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Divider */}
+        <div className="mb-8" style={{ height: '1px', background: 'rgba(255,255,255,0.08)' }} />
 
-          {/* Leistungen */}
-          <div>
-            <p className="text-xs font-semibold tracking-[0.16em] uppercase text-accent mb-4">
-              Leistungen
-            </p>
-            <ul className="flex flex-col gap-2.5">
-              {SERVICE_LINKS.map(l => (
-                <li key={l.label}>
-                  <a
-                    href={l.href}
-                    className="text-sm text-muted hover:text-white transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Kontakt */}
-          <div>
-            <p className="text-xs font-semibold tracking-[0.16em] uppercase text-accent mb-4">
-              Kontakt
-            </p>
+        {/* Contact + links row */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-10">
+          <div className="flex flex-col gap-1.5">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-sm text-muted hover:text-white transition-colors"
+              className="text-sm font-medium transition-opacity hover:opacity-80"
+              style={{ color: 'var(--gold)', textDecoration: 'none' }}
             >
               {CONTACT_EMAIL}
             </a>
+            <span className="text-sm" style={{ color: 'rgba(247,245,240,0.40)' }}>
+              schneider-webdesign.ch
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-6">
+            {[
+              { label: 'Pakete', href: '#pakete' },
+              { label: 'Referenz', href: '#referenz' },
+              { label: 'Ablauf', href: '#ablauf' },
+              { label: 'Kontakt', href: '#kontakt' },
+            ].map(l => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm transition-colors"
+                style={{ color: 'rgba(247,245,240,0.45)', textDecoration: 'none' }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'rgba(247,245,240,0.85)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(247,245,240,0.45)')}
+              >
+                {l.label}
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Bottom: copyright */}
-        <div
-          className="border-t pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
-          style={{ borderColor: 'rgba(227,225,220,0.12)' }}
-        >
-          <p className="text-sm text-muted">
-            © {year} Ruben Schneider
-          </p>
-          <p className="text-sm text-muted">
-            Moderne Websites für die Deutschschweiz
+        {/* Copyright */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1.5rem' }}>
+          <p className="text-xs" style={{ color: 'rgba(247,245,240,0.28)' }}>
+            © {year} Ruben Schneider · Moderne Websites für die Deutschschweiz
           </p>
         </div>
       </div>

@@ -1,82 +1,96 @@
 'use client'
-
-import { useState } from 'react'
-import Link from 'next/link'
-
-const NAV_LINKS = [
-  { label: 'Leistungen', href: '#leistungen' },
-  { label: 'Pakete',     href: '#pakete' },
-  { label: 'Referenz',   href: '#referenz' },
-  { label: 'Ablauf',     href: '#ablauf' },
-  { label: 'Kontakt',    href: '#kontakt' },
-]
+import { useState, useEffect } from 'react'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const links = [
+    { label: 'Pakete', href: '#pakete' },
+    { label: 'Referenz', href: '#referenz' },
+    { label: 'Ablauf', href: '#ablauf' },
+    { label: 'Kontakt', href: '#kontakt' },
+  ]
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-hairline">
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link href="/" className="font-display text-lg text-foreground hover:opacity-80 transition-opacity">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        background: scrolled ? 'rgba(247,245,240,0.95)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(226,221,214,0.8)' : '1px solid transparent',
+        boxShadow: scrolled ? '0 1px 12px rgba(28,26,23,0.06)' : 'none',
+      }}
+    >
+      <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
+        <a href="#" className="font-display text-xl" style={{ color: 'var(--fg)', textDecoration: 'none', letterSpacing: '-0.01em' }}>
           Ruben Schneider
-        </Link>
+        </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map(l => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-muted hover:text-foreground transition-colors"
+        <nav className="hidden md:flex items-center gap-7">
+          {links.map(l => (
+            <a key={l.href} href={l.href}
+              className="text-sm font-medium transition-colors"
+              style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--fg)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--fg-muted)')}
             >
               {l.label}
             </a>
           ))}
-          <a
-            href="#kontakt"
-            className="text-sm font-medium bg-accent text-[#0C0A06] px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
+          <a href="#kontakt"
+            className="text-sm font-semibold rounded-full transition-all"
+            style={{
+              background: 'var(--gold)', color: '#FFFFFF',
+              padding: '9px 20px', textDecoration: 'none',
+              letterSpacing: '0.01em',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = 'var(--gold-dark)')}
+            onMouseLeave={e => (e.currentTarget.style.background = 'var(--gold)')}
           >
             Kostenlose Ersteinschätzung
           </a>
         </nav>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground p-1"
-          aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
+        {/* Mobile burger */}
+        <button onClick={() => setOpen(!open)} aria-label="Menü"
+          className="md:hidden p-2 rounded-lg transition-colors"
+          style={{ background: open ? 'var(--clay-light)' : 'transparent' }}
         >
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-            {open ? (
-              <path d="M4 4l14 14M18 4L4 18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-            ) : (
-              <>
-                <line x1="3" y1="6" x2="19" y2="6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                <line x1="3" y1="11" x2="19" y2="11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                <line x1="3" y1="16" x2="19" y2="16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </>
-            )}
+          <svg width="20" height="20" fill="none">
+            {open
+              ? <path d="M4 4l12 12M16 4L4 16" stroke="var(--fg)" strokeWidth="1.6" strokeLinecap="round" />
+              : <>
+                <line x1="3" y1="6" x2="17" y2="6" stroke="var(--fg)" strokeWidth="1.6" strokeLinecap="round" />
+                <line x1="3" y1="11" x2="17" y2="11" stroke="var(--fg)" strokeWidth="1.6" strokeLinecap="round" />
+                <line x1="3" y1="16" x2="17" y2="16" stroke="var(--fg)" strokeWidth="1.6" strokeLinecap="round" />
+              </>}
           </svg>
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-hairline bg-white px-6 pb-6 flex flex-col gap-4 pt-4">
-          {NAV_LINKS.map(l => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-base text-muted hover:text-foreground transition-colors py-1"
+        <div className="md:hidden px-5 pb-5 flex flex-col gap-4"
+          style={{ borderTop: '1px solid var(--border)', background: 'rgba(247,245,240,0.98)', backdropFilter: 'blur(12px)' }}
+        >
+          {links.map(l => (
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)}
+              className="text-base font-medium py-2"
+              style={{ color: 'var(--fg)', textDecoration: 'none', borderBottom: '1px solid var(--border-light)' }}
             >
               {l.label}
             </a>
           ))}
-          <a
-            href="#kontakt"
-            onClick={() => setOpen(false)}
-            className="inline-flex items-center justify-center mt-2 text-sm font-medium bg-accent text-[#0C0A06] px-5 py-3 rounded-full self-start hover:opacity-90 transition-opacity"
+          <a href="#kontakt" onClick={() => setOpen(false)}
+            className="self-start text-sm font-semibold rounded-full"
+            style={{ background: 'var(--gold)', color: '#fff', padding: '11px 24px', textDecoration: 'none' }}
           >
             Kostenlose Ersteinschätzung
           </a>

@@ -1,14 +1,7 @@
+'use client'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
+
 const REASONS = [
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-        <circle cx="11" cy="8" r="4" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M3 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Persönliche Zusammenarbeit',
-    body: 'Kein anonymes Ticket-System, kein Team-Durcheinander. Sie arbeiten direkt mit mir – von der ersten Idee bis zur fertigen Website.',
-  },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
@@ -16,8 +9,19 @@ const REASONS = [
         <path d="M6 13h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: 'Bauhintergrund & Branchenwissen',
-    body: 'Durch meinen Hintergrund im Bau- und Ingenieurwesen verstehe ich, wie Handwerksbetriebe denken – welche Leistungen erklärt werden müssen und was potenzielle Kunden wissen wollen.',
+    title: 'Bauhintergrund',
+    body: 'Ich verstehe, wie Bau-, Handwerks- und Immobilienbetriebe arbeiten.',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <rect x="2" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M7 10h8M7 14h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M6 6V4M16 6V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+    title: 'Klare Kommunikation',
+    body: 'Sie wissen, was gemacht wird, was es kostet und was sinnvoll ist.',
   },
   {
     icon: (
@@ -26,88 +30,52 @@ const REASONS = [
         <polyline points="7 5 1 11 7 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Moderne Technik',
-    body: 'Next.js, TypeScript, Supabase, Tailwind CSS – keine veralteten Template-Lösungen. Ihre Website wird mit aktuellen, bewährten Technologien umgesetzt.',
+    title: 'Moderne Umsetzung',
+    body: 'Schnell, mobiloptimiert und technisch sauber.',
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-        <rect x="2" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M7 10h8M7 14h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M6 6V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M16 6V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="11" cy="11" r="9" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M11 7v4l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: 'Faire, transparente Preise',
-    body: 'Klare Pakete und Startpreise – keine versteckten Kosten, kein Overcharging. Kleinen Betrieben biete ich vernünftige Lösungen zu vernünftigen Preisen.',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-        <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="11" cy="11" r="3" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M11 3v2M11 17v2M3 11h2M17 11h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Fokus auf Wirkung',
-    body: 'Nicht nur Ästhetik, sondern echte Wirkung: mehr Vertrauen bei Kunden, klarere Darstellung Ihrer Leistungen, bessere Anfragebasis. Das ist das Ziel.',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-        <path d="M11 2l2.4 6.8H20L14.7 12.5l2 6.5L11 15.3 4.3 19l2-6.5L1 8.8h6.6L11 2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: 'Klare Kommunikation',
-    body: 'Ich erkläre, was ich tue und warum. Keine Fachbegriff-Lawinen, keine Ausreden. Verbindliche Aussagen und ehrliches Feedback, auch wenn es unbequem ist.',
+    title: 'Faire Startpreise',
+    body: 'Geeignet für kleinere Betriebe, die professionell auftreten möchten.',
   },
 ]
 
 export default function WhyMeSection() {
+  const ref = useScrollReveal()
   return (
-    <section id="warum" className="scroll-mt-20 bg-background border-t border-hairline">
-      <div className="max-w-6xl mx-auto px-6 py-20 md:py-24">
-        <div className="grid lg:grid-cols-2 gap-14 items-start mb-14">
-          <div>
-            <p
-              className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
-              style={{ color: '#C9A84C' }}
-            >
-              Warum mit mir?
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-[1.1]">
-              Persönlich, kompetent, fair.
-            </h2>
-          </div>
-          <div className="lg:pt-12">
-            <p className="text-base text-muted leading-relaxed mb-4">
-              Ich bin kein anonymes Unternehmen – ich bin Ruben Schneider, und ich arbeite
-              persönlich mit Ihnen zusammen.
-            </p>
-            <p className="text-base text-muted leading-relaxed">
-              Durch meinen Hintergrund im Bau- und Ingenieurwesen verstehe ich, wie
-              Handwerksbetriebe, Bauunternehmen und Immobilienanbieter arbeiten – welche
-              Leistungen erklärt werden müssen und wie wichtig Vertrauen, Referenzen
-              und ein sauberer erster Eindruck für Aufträge sind.
-            </p>
-          </div>
+    <section id="warum" className="scroll-mt-20 py-20 md:py-24" ref={ref} style={{ background: 'var(--bg)' }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <div className="reveal mb-3">
+          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Warum mit mir?</p>
+          <h2 className="font-display" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', color: 'var(--fg)', letterSpacing: '-0.01em' }}>
+            Direkt mit mir. Ohne Agentur-Umwege.
+          </h2>
         </div>
+        <p className="reveal reveal-delay-1 text-base leading-relaxed mb-12 max-w-xl" style={{ color: 'var(--fg-muted)' }}>
+          Ich bin kein grosses Agenturteam. Sie sprechen direkt mit mir – von der ersten Idee bis zur fertigen Website.
+        </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {REASONS.map(r => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {REASONS.map((r, i) => (
             <div
               key={r.title}
-              className="bg-surface rounded-2xl p-6 border border-hairline flex flex-col gap-4"
+              className={`reveal reveal-delay-${i + 1} rounded-2xl p-6 flex flex-col gap-4`}
+              style={{ background: 'var(--surface)', border: '1.5px solid var(--border-light)' }}
             >
               <div
                 className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: '#FBF4E4', color: '#C9A84C' }}
+                style={{ background: 'var(--gold-light)', color: 'var(--gold)' }}
               >
                 {r.icon}
               </div>
               <div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{r.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{r.body}</p>
+                <h3 className="text-base font-semibold mb-1.5" style={{ color: 'var(--fg)' }}>{r.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{r.body}</p>
               </div>
             </div>
           ))}
