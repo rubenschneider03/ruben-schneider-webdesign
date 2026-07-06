@@ -12,6 +12,7 @@ export default function Header() {
   }, [])
 
   const links = [
+    { label: 'Leistungen', href: '#leistungen' },
     { label: 'Pakete', href: '#pakete' },
     { label: 'Referenz', href: '#referenz' },
     { label: 'Ablauf', href: '#ablauf' },
@@ -28,8 +29,22 @@ export default function Header() {
       }}
     >
       <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-        <a href="#" className="font-display text-xl" style={{ color: 'var(--fg)', textDecoration: 'none', letterSpacing: '-0.01em' }}>
-          Ruben Schneider
+        <a href="#" className="flex items-center gap-3" style={{ textDecoration: 'none' }}>
+          <span
+            className="font-display flex items-center justify-center w-9 h-9 rounded-lg text-sm flex-shrink-0"
+            style={{ border: '1.5px solid var(--gold)', color: 'var(--gold-dark)', letterSpacing: '0.02em' }}
+            aria-hidden
+          >
+            RS
+          </span>
+          <span className="flex flex-col leading-none gap-1">
+            <span className="font-display text-lg" style={{ color: 'var(--fg)', letterSpacing: '-0.01em' }}>
+              Ruben Schneider
+            </span>
+            <span className="text-[9px] font-bold tracking-[0.32em] uppercase" style={{ color: 'var(--gold-dark)' }}>
+              Webdesign
+            </span>
+          </span>
         </a>
 
         {/* Desktop nav */}

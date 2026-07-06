@@ -18,7 +18,7 @@ const inputStyle: React.CSSProperties = {
 export default function ContactSection() {
   const [name, setName] = useState('')
   const [firma, setFirma] = useState('')
-  const [website, setWebsite] = useState('')
+  const [website, setWebsite] = useState('Nein')
   const [paket, setPaket] = useState('')
   const [message, setMessage] = useState('')
   const [sent, setSent] = useState(false)
@@ -47,6 +47,10 @@ export default function ContactSection() {
           <h2 className="font-display mb-4" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', color: 'var(--fg)', letterSpacing: '-0.01em' }}>
             Lassen Sie uns kurz über Ihre Website sprechen.
           </h2>
+          <p className="text-base leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+            Schreiben Sie mir, was Ihr Betrieb macht. Ich gebe Ihnen eine ehrliche Einschätzung,
+            welches Paket sinnvoll ist.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-[2fr_1fr] gap-10 max-w-4xl mx-auto">
@@ -87,9 +91,8 @@ export default function ContactSection() {
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="website" className="text-xs font-semibold uppercase tracking-wide" style={{ color: 'var(--fg-muted)' }}>Bestehende Website?</label>
                     <select id="website" value={website} onChange={e => setWebsite(e.target.value)} style={{ ...inputStyle, colorScheme: 'light' }}>
-                      <option value="">Nein</option>
-                      <option value="Ja, soll überarbeitet werden">Ja, soll überarbeitet werden</option>
-                      <option value="Ja, komplett neu">Ja, komplett neu</option>
+                      <option value="Nein">Nein</option>
+                      <option value="Ja">Ja</option>
                     </select>
                   </div>
                   <div className="flex flex-col gap-1.5">

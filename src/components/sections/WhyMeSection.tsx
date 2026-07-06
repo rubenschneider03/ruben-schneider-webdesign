@@ -57,7 +57,7 @@ export default function WhyMeSection() {
           </h2>
         </div>
         <p className="reveal reveal-delay-1 text-base leading-relaxed mb-12 max-w-xl" style={{ color: 'var(--fg-muted)' }}>
-          Ich bin kein grosses Agenturteam. Sie sprechen direkt mit mir – von der ersten Idee bis zur fertigen Website.
+          Ich bin kein anonymes Agenturteam. Sie sprechen direkt mit mir – von der ersten Idee bis zur fertigen Website.
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

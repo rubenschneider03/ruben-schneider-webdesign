@@ -8,10 +8,10 @@ export default function HomelioReference() {
           <div>
             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: 'var(--gold)' }}>Flagship-Projekt</p>
             <h2 className="font-display mb-5" style={{ color: 'rgba(247,245,240,0.96)', fontSize: 'clamp(1.8rem,3vw,2.6rem)', letterSpacing: '-0.01em' }}>
-              Homelio – Eine komplexe digitale Plattform
+              Flagship-Projekt: Homelio
             </h2>
             <p className="leading-relaxed mb-6" style={{ color: 'rgba(247,245,240,0.60)', fontSize: '0.95rem' }}>
-              Homelio ist eine Plattform mit Registrierung, Nutzerprofilen, Matching, Premium-Abo, Stripe-Zahlung, E-Mail-Benachrichtigungen und Bewerbungsdossier.
+              Homelio ist eine komplexe Plattform mit Registrierung, Nutzerprofilen, Matching, Premium-Abo, Stripe-Zahlung, E-Mail-Benachrichtigungen und Bewerbungsdossier.
             </p>
             <p className="text-sm" style={{ color: 'rgba(247,245,240,0.38)' }}>
               Dieses Projekt zeigt: Neben klassischen Websites sind auch anspruchsvolle digitale Plattformen möglich.

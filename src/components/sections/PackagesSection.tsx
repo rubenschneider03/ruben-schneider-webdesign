@@ -213,7 +213,7 @@ interface PackageCardProps {
 function PackageCard({ name, price, tagline, features, highlighted, badge, mockup, index }: PackageCardProps) {
   return (
     <div
-      className={`relative rounded-2xl flex flex-col reveal reveal-delay-${index}`}
+      className={`relative rounded-2xl flex flex-col card-lift reveal reveal-delay-${index}`}
       style={{
         background: 'white',
         border: highlighted ? '2px solid var(--gold)' : '1.5px solid var(--border)',
@@ -273,14 +273,14 @@ function PackageCard({ name, price, tagline, features, highlighted, badge, mocku
 export default function PackagesSection() {
   const ref = useScrollReveal()
   return (
-    <section id="pakete" className="scroll-mt-20" ref={ref} style={{ background: 'var(--bg-dark)' }}>
-      <div className="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <section id="pakete" className="scroll-mt-20 relative blueprint-grid" ref={ref} style={{ background: 'var(--bg-dark)' }}>
+      <div className="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-24">
         <div className="reveal mb-4">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
             Pakete &amp; Preise
           </p>
           <h2 className="font-display" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', color: 'var(--fg)', letterSpacing: '-0.01em', lineHeight: 1.1 }}>
-            Drei klare Pakete. Kein unnötiges Agentur-Blabla.
+            Drei klare Pakete.
           </h2>
         </div>
         <p className="reveal reveal-delay-1 text-sm mb-14 max-w-xl leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
