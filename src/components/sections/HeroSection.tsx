@@ -70,20 +70,51 @@ export default function HeroSection() {
   return (
     <section
       id="start"
-      className="relative overflow-hidden pt-28 md:pt-32 pb-12 md:pb-16"
-      style={{ background: 'linear-gradient(180deg, #FBF8F1 0%, var(--bg) 60%)' }}
+      className="relative overflow-hidden pt-28 md:pt-36 pb-10 md:pb-14 lg:min-h-svh flex flex-col justify-center"
+      style={{ background: 'var(--bg)' }}
     >
-      {/* Warm ambient glow, upper right */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-        style={{ background: 'radial-gradient(ellipse 55% 45% at 72% 30%, rgba(196,155,70,0.10) 0%, transparent 70%)' }}
-      />
+      {/* Full-bleed background photo */}
+      <div className="hero-bg-enter absolute inset-0" aria-hidden>
+        <Image
+          src="/images/hero-house-background.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          style={{ objectPosition: '62% 42%' }}
+        />
+        {/* Ivory wash left → clear right (desktop) for text readability */}
+        <div
+          className="absolute inset-0 hidden lg:block"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(250,247,240,0.97) 0%, rgba(250,247,240,0.90) 30%, rgba(250,247,240,0.66) 48%, rgba(250,247,240,0.24) 64%, rgba(250,247,240,0) 78%)',
+          }}
+        />
+        {/* Vertical wash on smaller screens */}
+        <div
+          className="absolute inset-0 lg:hidden"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(250,247,240,0.95) 0%, rgba(250,247,240,0.85) 42%, rgba(250,247,240,0.45) 72%, rgba(250,247,240,0.18) 100%)',
+          }}
+        />
+        {/* Soft band behind the fixed header */}
+        <div
+          className="absolute inset-x-0 top-0 h-36"
+          style={{ background: 'linear-gradient(180deg, rgba(250,247,240,0.85) 0%, rgba(250,247,240,0) 100%)' }}
+        />
+        {/* Gentle fade into the next section */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-16"
+          style={{ background: 'linear-gradient(180deg, rgba(247,245,240,0) 0%, rgba(247,245,240,0.55) 100%)' }}
+        />
+      </div>
 
-      <div className="relative max-w-6xl mx-auto px-5 md:px-8">
-        <div className="grid lg:grid-cols-[minmax(0,47%)_1fr] gap-10 lg:gap-8 items-center">
-          {/* Left: copy */}
-          <div className="relative z-10">
+      <div className="relative max-w-6xl mx-auto px-5 md:px-8 w-full">
+        {/* Copy — over the calm sky area of the photo */}
+        <div className="relative z-10 max-w-xl">
             <div
               className="hero-enter hero-enter-1 inline-flex items-center gap-2 mb-6 text-xs font-bold tracking-[0.18em] uppercase"
               style={{ color: 'var(--gold-dark)' }}
@@ -142,37 +173,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: architectural hero image */}
-          <div className="hero-enter-visual relative">
-            <div
-              className="absolute -inset-4 rounded-[2rem] pointer-events-none"
-              aria-hidden
-              style={{ background: 'radial-gradient(ellipse at 60% 45%, rgba(196,155,70,0.16) 0%, transparent 70%)', filter: 'blur(24px)' }}
-            />
-            <div
-              className="relative overflow-hidden rounded-3xl aspect-[16/10] lg:aspect-[4/3]"
-              style={{ border: '1px solid rgba(255,255,255,0.6)', boxShadow: '0 24px 64px rgba(28,26,23,0.16), 0 6px 20px rgba(28,26,23,0.08)' }}
-            >
-              <Image
-                src="/images/hero-house-background.png"
-                alt="Modernes, fertiggestelltes Einfamilienhaus am Abend"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 54vw"
-                className="object-cover"
-              />
-              {/* Warm tint so the photo sits in the page's palette */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                aria-hidden
-                style={{ background: 'linear-gradient(200deg, rgba(184,145,58,0.08) 0%, transparent 40%, rgba(28,26,23,0.10) 100%)' }}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Trust cards */}
-        <div className="hero-enter hero-enter-5 relative z-10 grid sm:grid-cols-3 gap-4 mt-8 lg:mt-12">
+        {/* Trust cards — left aligned over the photo */}
+        <div className="hero-enter hero-enter-5 relative z-10 grid sm:grid-cols-3 gap-4 mt-10 lg:mt-14 lg:max-w-2xl">
           {TRUST_CARDS.map((card) => (
             <div
               key={card.title}
@@ -201,7 +203,7 @@ export default function HeroSection() {
         {/* Trust strip */}
         <div
           className="hero-enter hero-enter-6 mt-10 md:mt-14 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 px-6 py-5"
-          style={{ background: 'rgba(255,255,255,0.65)', border: '1px solid var(--border-light)', backdropFilter: 'blur(8px)' }}
+          style={{ background: 'rgba(255,255,255,0.82)', border: '1px solid var(--border-light)', backdropFilter: 'blur(10px)', boxShadow: '0 8px 28px rgba(28,26,23,0.08)' }}
         >
           <p className="flex items-center gap-2.5 text-sm font-medium" style={{ color: 'var(--fg-muted)' }}>
             <span

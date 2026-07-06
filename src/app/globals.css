@@ -123,11 +123,11 @@ body {
 .hero-enter-5 { animation-delay: 0.55s; }
 .hero-enter-6 { animation-delay: 0.70s; }
 
-@keyframes fadeScale {
-  from { opacity: 0; transform: translateY(18px) scale(0.985); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-.hero-enter-visual { animation: fadeScale 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+.hero-bg-enter { animation: fadeIn 1.4s ease both; }
 
 /* Soft hover lift for cards */
 .card-lift {
@@ -143,7 +143,7 @@ body {
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .hero-enter, .hero-enter-visual { animation: none; opacity: 1; transform: none; }
+  .hero-enter, .hero-bg-enter { animation: none; opacity: 1; transform: none; }
   .float-1, .float-2, .float-3 { animation: none; }
   .card-lift, .card-lift:hover { transition: none; transform: none; }
   html { scroll-behavior: auto; }
