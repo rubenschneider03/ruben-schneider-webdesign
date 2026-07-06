@@ -138,13 +138,6 @@ body {
   box-shadow: 0 16px 40px rgba(28,26,23,0.10);
 }
 
-/* Build-phase crossfade layers (process section) */
-.phase-layer {
-  opacity: 0;
-  transition: opacity 0.7s ease;
-}
-.phase-layer.active { opacity: 1; }
-
 .font-display { font-family: var(--font-display), Georgia, serif; }
 
 /* Respect reduced-motion preferences */
@@ -153,6 +146,5 @@ body {
   .hero-enter, .hero-enter-visual { animation: none; opacity: 1; transform: none; }
   .float-1, .float-2, .float-3 { animation: none; }
   .card-lift, .card-lift:hover { transition: none; transform: none; }
-  .phase-layer { transition: none; }
   html { scroll-behavior: auto; }
 }

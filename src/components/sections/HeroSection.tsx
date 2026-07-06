@@ -1,4 +1,4 @@
-import HouseScene from '@/components/visuals/HouseScene'
+import Image from 'next/image'
 
 const TRUST_CARDS = [
   {
@@ -81,7 +81,7 @@ export default function HeroSection() {
       />
 
       <div className="relative max-w-6xl mx-auto px-5 md:px-8">
-        <div className="grid lg:grid-cols-[minmax(0,44%)_1fr] gap-10 lg:gap-4 items-center">
+        <div className="grid lg:grid-cols-[minmax(0,47%)_1fr] gap-10 lg:gap-8 items-center">
           {/* Left: copy */}
           <div className="relative z-10">
             <div
@@ -106,10 +106,10 @@ export default function HeroSection() {
               Immobilienanbieter in der Schweiz – persönlich umgesetzt und passend zu Ihrem Betrieb.
             </p>
 
-            <div className="hero-enter hero-enter-4 flex flex-col sm:flex-row gap-3">
+            <div className="hero-enter hero-enter-4 flex flex-col sm:flex-row sm:flex-wrap gap-3">
               <a
                 href="#kontakt"
-                className="group inline-flex items-center justify-center gap-2.5 rounded-full font-semibold text-sm transition-all hover:opacity-95"
+                className="group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full font-semibold text-sm transition-all hover:opacity-95"
                 style={{
                   background: 'linear-gradient(135deg, #C49B46 0%, var(--gold) 60%, var(--gold-dark) 100%)',
                   color: '#fff',
@@ -125,7 +125,7 @@ export default function HeroSection() {
               </a>
               <a
                 href="#pakete"
-                className="group inline-flex items-center justify-center gap-2.5 rounded-full font-medium text-sm transition-colors hover:bg-[var(--clay-light)]"
+                className="group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full font-medium text-sm transition-colors hover:bg-[var(--clay-light)]"
                 style={{
                   background: 'rgba(255,255,255,0.75)',
                   color: 'var(--fg)',
@@ -142,14 +142,37 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: architectural hero visual */}
-          <div className="hero-enter-visual relative lg:-mr-16 xl:-mr-28">
-            <HouseScene className="w-full h-auto" />
+          {/* Right: architectural hero image */}
+          <div className="hero-enter-visual relative">
+            <div
+              className="absolute -inset-4 rounded-[2rem] pointer-events-none"
+              aria-hidden
+              style={{ background: 'radial-gradient(ellipse at 60% 45%, rgba(196,155,70,0.16) 0%, transparent 70%)', filter: 'blur(24px)' }}
+            />
+            <div
+              className="relative overflow-hidden rounded-3xl aspect-[16/10] lg:aspect-[4/3]"
+              style={{ border: '1px solid rgba(255,255,255,0.6)', boxShadow: '0 24px 64px rgba(28,26,23,0.16), 0 6px 20px rgba(28,26,23,0.08)' }}
+            >
+              <Image
+                src="/images/hero-house-background.png"
+                alt="Modernes, fertiggestelltes Einfamilienhaus am Abend"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 54vw"
+                className="object-cover"
+              />
+              {/* Warm tint so the photo sits in the page's palette */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                aria-hidden
+                style={{ background: 'linear-gradient(200deg, rgba(184,145,58,0.08) 0%, transparent 40%, rgba(28,26,23,0.10) 100%)' }}
+              />
+            </div>
           </div>
         </div>
 
-        {/* Floating trust cards — overlap the visual on desktop */}
-        <div className="hero-enter hero-enter-5 relative z-10 grid sm:grid-cols-3 gap-4 mt-4 lg:-mt-20 lg:max-w-4xl">
+        {/* Trust cards */}
+        <div className="hero-enter hero-enter-5 relative z-10 grid sm:grid-cols-3 gap-4 mt-8 lg:mt-12">
           {TRUST_CARDS.map((card) => (
             <div
               key={card.title}
