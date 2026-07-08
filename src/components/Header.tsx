@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -30,13 +31,15 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3" style={{ textDecoration: 'none' }}>
-          <span
-            className="font-display flex items-center justify-center w-9 h-9 rounded-lg text-sm flex-shrink-0"
-            style={{ border: '1.5px solid var(--gold)', color: 'var(--gold-dark)', letterSpacing: '0.02em' }}
-            aria-hidden
-          >
-            RS
-          </span>
+          {/* RS monogram logo */}
+          <Image
+            src="/images/logo-rs.png"
+            alt=""
+            width={40}
+            height={40}
+            className="w-10 h-10 flex-shrink-0"
+            aria-hidden="true"
+          />
           <span className="flex flex-col leading-none gap-1">
             <span className="font-display text-lg" style={{ color: 'var(--fg)', letterSpacing: '-0.01em' }}>
               Ruben Schneider
